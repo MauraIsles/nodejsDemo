@@ -1,14 +1,16 @@
-define( function(){
-    $( '#registerForm' ).click(function(){
+$( function(){
+    $('#registerForm').click(function(){
         console.log('submit');
-        debugger;
         var data = {
             username: $('#username').val(),
             password: $('#password').val(),
             email: $('#email').val()
         };
         console.log(data);
-        $.ajax({
+        $.post('/register1', data, function( ret ){
+            console.log( ret );
+        });
+        /*$.ajax({
             url: '/register',
             type: 'post',
             dataType: 'json',
@@ -16,7 +18,7 @@ define( function(){
             success: function( ret ){
                 console.log( ret );
             }
-        });
+        });*/
         return false;
     });
 });

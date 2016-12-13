@@ -11,7 +11,6 @@ function register( req, res ){ //定义注册转向
 }
 function registerUser(req, res){
     console.log('registerUser request');
-    debugger;
     res.send({code:0, msg:'register info access success', data:req.body});
 };
 module.exports = { //对外公开register函数
